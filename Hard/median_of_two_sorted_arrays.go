@@ -1,6 +1,9 @@
 package main
 
-import "slices"
+import (
+	"fmt"
+	"slices"
+)
 
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	if len(nums1) > 1000 || len(nums2) > 1000 {
@@ -21,4 +24,8 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	}
 
 	return (float64(joinArr[mid-1]) + float64(joinArr[mid])) / 2.0
+}
+
+func run_findMedianSortedArrays() {
+	fmt.Println(findMedianSortedArrays([]int{1, 2, 3, 4, 5}, []int{6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}))
 }
