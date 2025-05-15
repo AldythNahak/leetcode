@@ -1,3 +1,5 @@
+package palindrome_number;
+
 class Solution {
     public boolean isPalindrome(int x) {
         String strX = String.valueOf(x);
