@@ -24,3 +24,10 @@ class Solution {
         }
     }
 }
+
+public class median_of_two_sorted_arrays {
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        System.out.println(solution.findMedianSortedArrays(new int[] {1, 2, 3, 4, 5}, new int[] {6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}));
+    }
+}

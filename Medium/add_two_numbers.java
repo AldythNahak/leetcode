@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListNode {
     int val;
     ListNode next;
@@ -50,12 +53,43 @@ class Solution {
     }
 }
 
+public static ListNode arrayToList(int[] arr) {
+    ListNode dummy = new ListNode(0);
+    ListNode current = dummy;
+    for (int val : arr) {
+        current.next = new ListNode(val);
+        current = current.next;
+    }
+    return dummy.next;
+}
+
+public static int[] listToArray(ListNode head) {
+    List<Integer> tempList = new ArrayList<>();
+    while (head != null) {
+        tempList.add(head.val);
+        head = head.next;
+    }
+
+    int[] result = new int[tempList.size()];
+    for (int i = 0; i < tempList.size(); i++) {
+        result[i] = tempList.get(i);
+    }
+    return result;
+}
+
 public class add_two_numbers {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        // System.out.println(solution.addTwoNumbers(new int[] { 2, 7, 11, 15 }, 9));
-        // System.out.println(solution.addTwoNumbers(new int[] { 3, 2, 4 }, 6));
-        // System.out.println(solution.addTwoNumbers(new int[] { 3, 3 }, 6));
-        // System.out.println(solution.addTwoNumbers(new int[] { -3, 4, 3, 90 }, 0));
+        int[][][] listTest = new int[][][] {
+            {{2, 4, 3}, {5, 6, 4}},
+            {{9, 9, 9, 9, 9, 9, 9}, {9, 9, 9, 9}},
+            {{0}, {0}}
+        };
+
+     for (int i = 0; i < listTest.length; i++) {
+        ListNode num1 = arrayToList(listTest[i][0]);
+        ListNode num2 = arrayToList(listTest[i][1]);
+        System.out.println(listToArray(solution.addTwoNumbers(num1, num2)));
+     }
     }
 }
