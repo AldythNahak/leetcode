@@ -4,6 +4,10 @@ class Solution(object):
     :type s: str
     :rtype: bool
     """
+    
+    if len(s)%2 != 0 or len(s) > 10000:
+      return False
+    
     mapParentheses = {"(": ")","[": "]", "{": "}"}
     collectParentheses = []
     
