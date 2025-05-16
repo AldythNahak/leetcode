@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func isValid(s string) bool {
@@ -10,18 +11,22 @@ func isValid(s string) bool {
 		return false
 	}
 
-	// mapParentheses := map[string]string{
-	// 	"(": ")",
-	// 	"[": "]",
-	// 	"{": "}",
-	// }
-	// strSplit := strings.Split(s, "")
+	mapParentheses := map[string]string{
+		"(": ")",
+		"[": "]",
+		"{": "}",
+	}
+	// collectParentheses := make([]string)
+	strSplit := strings.Split(s, "")
 
-	// for i, c := range strSplit {
-	// 	// 	if(i == 0 && Object.values(mapParentheses).includes(s[i])) {
-	// 	//   return false;
-	// 	// }
-	// }
+	for i, _ := range strSplit {
+		if i == 0 {
+			for _, p := range mapParentheses {
+				fmt.Println(p)
+			}
+		}
+
+	}
 
 	return true
 }
