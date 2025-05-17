@@ -13,31 +13,41 @@ func reverseString(s string) string {
 }
 
 func longestPalindrome(s string) string {
-	var resultMatch string
-
-	if len(s) > 1000 {
-		return resultMatch
+	if len(s) == 0 || len(s) > 1000 {
+		return s
 	}
 
+	if s == reverseString(s) {
+		return s
+	}
+
+	var resultMatch string
 	strSplit := []rune(s)
 	lenStr := len(strSplit)
-
-	collectMatch := make(map[string]int)
+	resultMatch = string(strSplit[0])
 	for i := 0; i < lenStr; i++ {
 		for j := i + 1; j <= lenStr; j++ {
-			getStr := strSplit[i:j]
-			strJoin := string(getStr)
-
-			if _, ok := collectMatch[strJoin]; ok {
+			if strSplit[i] != strSplit[j-1] {
 				continue
 			}
 
+			if j > 1 && i+1 < lenStr && strSplit[i+1] != strSplit[j-2] {
+				continue
+			}
+
+			if len(resultMatch) >= j-i {
+				continue
+			}
+
+			strJoin := string(strSplit[i:j])
 			strJoinReverse := reverseString(strJoin)
+
+			// if i == 1 {
+			// fmt.Printf("%d - %d \n", i, j)
+			// }
+
 			if strJoin == strJoinReverse {
-				if len(strJoin) > len(resultMatch) {
-					resultMatch = strJoin
-					collectMatch[strJoin] = i
-				}
+				resultMatch = strJoin
 			}
 		}
 	}
@@ -48,8 +58,9 @@ func longestPalindrome(s string) string {
 func run_longestPalindrome() {
 	// start := time.Now()
 	fmt.Println(longestPalindrome("cbbd"))
-	// fmt.Println(longestPalindrome("c"))
-	fmt.Println(longestPalindrome("ibvjkmpyzsifuxcabqqpahjdeuzaybqsrsmbfplxycsafogotliyvhxjtkrbzqxlyfwujzhkdafhebvsdhkkdbhlhmaoxmbkqiwiusngkbdhlvxdyvnjrzvxmukvdfobzlmvnbnilnsyrgoygfdzjlymhprcpxsnxpcafctikxxybcusgjwmfklkffehbvlhvxfiddznwumxosomfbgxoruoqrhezgsgidgcfzbtdftjxeahriirqgxbhicoxavquhbkaomrroghdnfkknyigsluqebaqrtcwgmlnvmxoagisdmsokeznjsnwpxygjjptvyjjkbmkxvlivinmpnpxgmmorkasebngirckqcawgevljplkkgextudqaodwqmfljljhrujoerycoojwwgtklypicgkyaboqjfivbeqdlonxeidgxsyzugkntoevwfuxovazcyayvwbcqswzhytlmtmrtwpikgacnpkbwgfmpavzyjoxughwhvlsxsgttbcyrlkaarngeoaldsdtjncivhcfsaohmdhgbwkuemcembmlwbwquxfaiukoqvzmgoeppieztdacvwngbkcxknbytvztodbfnjhbtwpjlzuajnlzfmmujhcggpdcwdquutdiubgcvnxvgspmfumeqrofewynizvynavjzkbpkuxxvkjujectdyfwygnfsukvzflcuxxzvxzravzznpxttduajhbsyiywpqunnarabcroljwcbdydagachbobkcvudkoddldaucwruobfylfhyvjuynjrosxczgjwudpxaqwnboxgxybnngxxhibesiaxkicinikzzmonftqkcudlzfzutplbycejmkpxcygsafzkgudy"))
+	fmt.Println(longestPalindrome("babad"))
+	fmt.Println(longestPalindrome("ccc"))
+	fmt.Println(longestPalindrome("xaaaabbbbbbbbbbccccccccccddddddddddeeeeeeeeeeffffffffffgggggggggghhhhhhhhhhiiiiiiiiiijjjjjjjjjjkkkkkkkkkkllllllllllmmmmmmmmmmnnnnnnnnnnooooooooooppppppppppqqqqqqqqqqrrrrrrrrrrssssssssssttttttttttuuuuuuuuuuvvvvvvvvvvwwwwwwwwwwxxxxxxxxxxyyyyyyyyyyzzzzzzzzzzyyyyyyyyyyxxxxxxxxxxwwwwwwwwwwvvvvvvvvvvuuuuuuuuuuttttttttttssssssssssrrrrrrrrrrqqqqqqqqqqppppppppppoooooooooonnnnnnnnnnmmmmmmmmmmllllllllllkkkkkkkkkkjjjjjjjjjjiiiiiiiiiihhhhhhhhhhggggggggggffffffffffeeeeeeeeeeddddddddddccccccccccbbbbbbbbbbaaaaaaaabbbbbbbbbbccccccccccddddddddddeeeeeeeeeeffffffffffgggggggggghhhhhhhhhhiiiiiiiiiijjjjjjjjjjkkkkkkkkkkllllllllllmmmmmmmmmmnnnnnnnnnnooooooooooppppppppppqqqqqqqqqqrrrrrrrrrrssssssssssttttttttttuuuuuuuuuu"))
 	// d := time.Since(start)
 	// fmt.Println(d)
 }
