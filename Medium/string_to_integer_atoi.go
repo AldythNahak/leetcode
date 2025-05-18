@@ -29,15 +29,16 @@ func myAtoi(s string) int {
 		collectString = collectString + string(s[i])
 	}
 
+	if len(collectString) >= 20 {
+		if isNegative {
+			return -(1 << 31)
+		} else {
+			return (1 << 31) - 1
+		}
+	}
+
 	resultInt, err := strconv.Atoi(collectString)
 	if err != nil {
-		if len(collectString) > 5 {
-			if isNegative {
-				return -(1 << 31)
-			} else {
-				return (1 << 31) - 1
-			}
-		}
 		return 0
 	}
 
