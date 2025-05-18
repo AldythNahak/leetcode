@@ -26,3 +26,5 @@ print(Solution().lengthOfLongestSubstring("pwwkew")) #3
 print(Solution().lengthOfLongestSubstring("")) #0
 print(Solution().lengthOfLongestSubstring("au")) #2
 print(Solution().lengthOfLongestSubstring("aab")) #2
+
+#NOTE: TIME OUT ERROR on Leetcode 
