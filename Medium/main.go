@@ -14,5 +14,7 @@ func main() {
 	// run_longestPalindrome()
 	// run_convert()
 	// run_reverse()
-	run_myAtoi()
+	// run_myAtoi()
+	run_intToRoman()
+	// run_maxArea()
 }
