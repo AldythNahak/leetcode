@@ -13,5 +13,6 @@ func main() {
 	// run_lengthOfLongestSubstring()
 	// run_longestPalindrome()
 	// run_convert()
-	run_reverse()
+	// run_reverse()
+	run_myAtoi()
 }
