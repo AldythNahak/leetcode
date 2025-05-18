@@ -17,22 +17,34 @@ var myAtoi = function (s) {
             continue;
         }
 
-        console.log(parseInt(s[i]) === NaN)
-
-        if(parseInt(s[i]) === NaN) {
+        if(s[i].match(/^[0-9]/g) == null) {
             break;
         }
 
         collectString += s[i];
     }
 
-    console.log(collectString)
+    let resultInt = parseInt(collectString);
+    if(!resultInt) {
+        return 0;
+    }
 
+    if(isNegative) {
+        resultInt = -(collectString)
+    }   
+
+    if(resultInt < -(2**31)) {
+		return -(2**31);
+	} else if (resultInt > (2**31)-1) {
+		return (2**31) - 1;
+	}
+    
+    return resultInt
 };
 
 console.log(myAtoi("1337c0d3"));
-// console.log(myAtoi("words and 987"));
-// console.log(myAtoi("  -042"));
-// console.log(myAtoi("20000000000000000000"));
-// console.log(myAtoi("   +0 123"));
-// console.log(myAtoi("21474836460"));
+console.log(myAtoi("words and 987"));
+console.log(myAtoi("  -042"));
+console.log(myAtoi("20000000000000000000"));
+console.log(myAtoi("   +0 123"));
+console.log(myAtoi("21474836460"));
