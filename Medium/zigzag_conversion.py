@@ -5,28 +5,30 @@ class Solution(object):
         :type numRows: int
         :rtype: str
         """
-        mapLetter = [[] for _ in range(numRows)]
-        # strReverse = list(s)[::-1]
-        # print(strReverse)
-        start = 0
-        iLetter = 0
+        if len(s) == 0 or len(s) > 1000 or numRows <= 1 or numRows > 1000:
+            return s
         
-        for i, _ in enumerate(mapLetter):
-            if iLetter > len(s):
-                break
+        collectZigzag = ["" for _ in range(numRows)]
+        currRow = 0
+        isStraight = True
+        
+        for _, c in enumerate(s):
+            if currRow == 0:
+                isStraight = True
+            elif currRow == numRows - 1:
+                isStraight = False
             
-            if start == 0:
-                mapLetter[i].append(s[iLetter])
-            
-            iLetter += 1
-            
-            if start < numRows:
-                start = 0
+            collectZigzag[currRow] += c
+                
+            if isStraight:
+                currRow += 1
             else:
-                start += 1
+                currRow -= 1
+                
+
+        return "".join(collectZigzag)
         
-        print(mapLetter)
         
-        
-print(Solution().convert("PAYPALISHIRING", 3))
+# print(Solution().convert("PAYPALISHIRING", 3))
+print(Solution().convert("AB", 1))
         
