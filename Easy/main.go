@@ -7,5 +7,6 @@ func main() {
 	// run_isValid()
 	// run_longestCommonPrefix()
 	// run_removeDuplicates()
-	run_removeElement()
+	// run_removeElement()
+	run_strStr()
 }
