@@ -6,5 +6,6 @@ func main() {
 	// run_romanToInt()
 	// run_isValid()
 	// run_longestCommonPrefix()
-	run_removeDuplicates()
+	// run_removeDuplicates()
+	run_removeElement()
 }
