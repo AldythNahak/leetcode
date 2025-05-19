@@ -5,5 +5,6 @@ func main() {
 	// run_twoSum()
 	// run_romanToInt()
 	// run_isValid()
-	run_longestCommonPrefix()
+	// run_longestCommonPrefix()
+	run_removeDuplicates()
 }
