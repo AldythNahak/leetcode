@@ -5,20 +5,26 @@ class Solution(object):
         :rtype: int
         """
         countValidParentheses = 0
-        
-        for i in range(len(s) - 1):
-            currP = s[i]
-            nextP = s[i+1]
-            
-            if currP == "(" and nextP == ")":
-                countValidParentheses += 2
+        storeIndex = [-1]
+
+        for i, c in enumerate(s):
+            if c == "(":
+                storeIndex.append(i)
             else:
-                countValidParentheses -= 1
+                storeIndex.pop()
         
+                if len(storeIndex) == 0:
+                    storeIndex.append(i)
+                else:
+                    countValidParentheses = max(countValidParentheses, i - storeIndex[-1])
+                
         return countValidParentheses
     
-print(Solution().longestValidParentheses("(()"))
-print(Solution().longestValidParentheses(")()())"))
-print(Solution().longestValidParentheses(""))
-print(Solution().longestValidParentheses("()(()"))
+print(Solution().longestValidParentheses("(()")) #2
+print(Solution().longestValidParentheses(")()())")) #4
+print(Solution().longestValidParentheses("")) #0
+print(Solution().longestValidParentheses("()(()")) #2
+print(Solution().longestValidParentheses("()(())")) #6
+print(Solution().longestValidParentheses("()")) #6
+
 
