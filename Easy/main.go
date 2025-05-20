@@ -8,5 +8,6 @@ func main() {
 	// run_longestCommonPrefix()
 	// run_removeDuplicates()
 	// run_removeElement()
-	run_strStr()
+	// run_strStr()
+	run_searchInsert()
 }
