@@ -18,6 +18,7 @@ func main() {
 	// run_intToRoman()
 	// run_threeSum()
 	// run_divide()
-	run_searchRange()
+	// run_searchRange()
+	run_threeSumClosest()
 	// run_maxArea()
 }
