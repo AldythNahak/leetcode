@@ -11,7 +11,7 @@ class Solution(object):
         nums = sorted(nums)
         lastSumClosest = nums[0] + nums[1] + nums[2]
 
-        for i, n in enumerate(nums):
+        for i in range(totalNum - 1):
             iLeft, iRight = i+1, totalNum-1
             while iLeft < iRight:
                 sumNum = nums[iLeft] + nums[i] + nums[iRight]
