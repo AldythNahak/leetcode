@@ -17,7 +17,7 @@ Each solution is:
   - [`php`](https://github.com/AldythNahak/leetcode/tree/php) – PHP
   - [`javascript`](https://github.com/AldythNahak/leetcode/tree/javascript) – JavaScript
   - [`go`](https://github.com/AldythNahak/leetcode/tree/go) – Go
-  - [`go`](https://github.com/AldythNahak/leetcode/tree/rust) – Rust
+  - [`rust`](https://github.com/AldythNahak/leetcode/tree/rust) – Rust
 
 > Tip: Each branch mirrors the same folder structure for consistency across languages.
 
