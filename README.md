@@ -13,11 +13,11 @@ Each solution is:
 
 - Switch branches to explore solutions in different programming languages:
   - [`main`](https://github.com/AldythNahak/leetcode) – Python
-  - [`java`](https://github.com/AldythNahak/leetcode/tree/java) – Java
-  - [`php`](https://github.com/AldythNahak/leetcode/tree/php) – PHP
-  - [`javascript`](https://github.com/AldythNahak/leetcode/tree/javascript) – JavaScript
-  - [`go`](https://github.com/AldythNahak/leetcode/tree/go) – Go
-  - [`rust`](https://github.com/AldythNahak/leetcode/tree/rust) – Rust
+  - [`Java`](https://github.com/AldythNahak/leetcode/tree/JAVA) – Java
+  - [`PHP`](https://github.com/AldythNahak/leetcode/tree/PHP) – PHP
+  - [`JavaScript`](https://github.com/AldythNahak/leetcode/tree/JAVASCRIPT) – JavaScript
+  - [`Go`](https://github.com/AldythNahak/leetcode/tree/GO) – Go
+  - [`Rust`](https://github.com/AldythNahak/leetcode/tree/RUST) – Rust
 
 > Tip: Each branch mirrors the same folder structure for consistency across languages.
 
