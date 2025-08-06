@@ -28,5 +28,11 @@ public class two_sum {
         System.out.println(solution.twoSum(new int[] { 3, 2, 4 }, 6));
         System.out.println(solution.twoSum(new int[] { 3, 3 }, 6));
         System.out.println(solution.twoSum(new int[] { -3, 4, 3, 90 }, 0));
+
+        // String a = "a";
+        // String b = "a";
+        // String c = new String("a");
+        // System.out.println(a == b);
+        // System.out.println(a.equals(c));
     }
 }
